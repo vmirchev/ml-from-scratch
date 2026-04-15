@@ -1,5 +1,5 @@
 import numpy as np
-from layers import BaseLayer
+from .layers import BaseLayer
 
 class ReLU(BaseLayer):
   

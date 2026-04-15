@@ -25,6 +25,13 @@ This repository demonstrates the mathematical foundations of machine learning by
 * Multi-class classification (Iris dataset)
 * Mini-batch training
 
+### 03 — K-Fold Cross-Validation
+
+* Train/validation split vs cross-validation
+* K-fold cross-validation from scratch
+* Data leakage and proper preprocessing
+* Model evaluation across multiple folds
+
 ---
 
 ## Key Concepts Covered
@@ -34,6 +41,9 @@ This repository demonstrates the mathematical foundations of machine learning by
 * Gradient flow through layers
 * Loss functions and their derivatives
 * Basic model training
+* Model evaluation and validation strategies
+* Cross-validation and variance estimation
+* Data leakage prevention
 
 ---
 

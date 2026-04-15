@@ -17,6 +17,14 @@ This repository demonstrates the mathematical foundations of machine learning by
 * Backpropagation through a simple neural network
 * Implementation of `LinearLayer` and `ReLU`
 
+### 02 — Softmax & Cross Entropy
+
+* Softmax activation (numerically stable)
+* Cross-entropy loss
+* One-hot encoding
+* Multi-class classification (Iris dataset)
+* Mini-batch training
+
 ---
 
 ## Key Concepts Covered

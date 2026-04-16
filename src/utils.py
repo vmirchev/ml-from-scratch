@@ -40,7 +40,7 @@ def plot_training_curves(train_losses, train_accuracies, val_losses=None, val_ac
   # plot for Loss
   axes[0].plot(train_losses, label='Train Loss')
   if val_losses is not None:
-      axes[0].plot(val_losses, label='Val Loss', linestyle='--')
+      axes[0].plot(val_losses, label='Val Loss')
 
   axes[0].set_title('Loss Over Epochs')
   axes[0].set_xlabel('Epoch')
@@ -51,7 +51,7 @@ def plot_training_curves(train_losses, train_accuracies, val_losses=None, val_ac
   # plot for Accuracy
   axes[1].plot(train_accuracies, label='Train Accuracy')
   if val_accuracies is not None:
-      axes[1].plot(val_accuracies, label='Val Accuracy', linestyle='--')
+      axes[1].plot(val_accuracies, label='Val Accuracy')
 
   axes[1].set_title('Accuracy Over Epochs')
   axes[1].set_xlabel('Epoch')

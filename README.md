@@ -2,7 +2,7 @@
 
 As I learn more about machine learning, my curiosity would not let me continue without developing a deeper understanding of how neural networks work beneath the framework wrappers available today. Even though LLMs can generate models, training loops, and in some cases even synthetic training data, I believe that for personal development it is best to go beyond a surface-level understanding when implementing a neural network.
 
-This repository demonstrates the mathematical foundations of machine learning by implementing core algorithms from scratch using only NumPy.
+This repository demonstrates the mathematical foundations of machine learning by implementing core algorithms from scratch using only NumPy. Each notebook builds upon the previous one, progressively introducing more advanced concepts and refining the implementation toward more reusable and structured code.
 
 ---
 
@@ -32,6 +32,14 @@ This repository demonstrates the mathematical foundations of machine learning by
 * Data leakage and proper preprocessing
 * Model evaluation across multiple folds
 
+### 04 — Regularization (L2 & Dropout)
+
+* Binary classification with sigmoid and binary cross-entropy
+* L2 regularization
+* Dropout regularization
+* Overfitting demonstration
+* Comparison of regularization strategies
+
 ---
 
 ## Key Concepts Covered
@@ -44,6 +52,8 @@ This repository demonstrates the mathematical foundations of machine learning by
 * Model evaluation and validation strategies
 * Cross-validation and variance estimation
 * Data leakage prevention
+* Overfitting and generalization
+* Regularization techniques
 
 ---
 

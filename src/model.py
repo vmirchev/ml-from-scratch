@@ -1,4 +1,5 @@
 import numpy as np
+from .layers import LinearLayer
 
 class Model:
   def __init__(self, layers=None):
@@ -28,3 +29,32 @@ class Model:
     for layer in self.layers:
         if hasattr(layer, 'step'):
             layer.step(lr)
+
+  # new train and eval functions to update layers
+  def train(self):
+    for layer in self.layers:
+      layer.train()
+
+  def eval(self):
+    for layer in self.layers:
+      layer.eval()
+
+  def save(self, filepath):
+    params = {}
+    for i, layer in enumerate(self.layers):
+      if isinstance(layer, LinearLayer):
+        params[f'layer_{i}_w'] = layer.w
+        params[f'layer_{i}_b'] = layer.b
+    np.savez(filepath, **params)
+    print(f"[Info] Model parameters saved to {filepath}")
+
+  def load(self, filepath):
+    loaded_params = np.load(filepath)
+    for i, layer in enumerate(self.layers):
+      if isinstance(layer, LinearLayer):
+        if f'layer_{i}_w' in loaded_params and f'layer_{i}_b' in loaded_params:
+          layer.w = loaded_params[f'layer_{i}_w']
+          layer.b = loaded_params[f'layer_{i}_b']
+        else:
+          print(f"[Warning] Parameters for layer {i} not found in {filepath}")
+    print(f"[Info] Model parameters loaded from {filepath}")

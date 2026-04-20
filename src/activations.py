@@ -11,6 +11,9 @@ class ReLU(BaseLayer):
     dx = dout * (self.x > 0.0)
     return dx
     
+def sigmoid(x):
+  return 1 / (1 + np.exp(-np.clip(x, -50, 50)))
+    
 def softmax(x):
   x = np.asarray(x, dtype=np.float64)
   if x.ndim == 1:

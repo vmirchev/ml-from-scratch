@@ -1,12 +1,29 @@
 # Machine Learning from Scratch (NumPy)
 
-As I learn more about machine learning, my curiosity would not let me continue without developing a deeper understanding of how neural networks work beneath the framework wrappers available today. Even though LLMs can generate models, training loops, and in some cases even synthetic training data, I believe that for personal development it is best to go beyond a surface-level understanding when implementing a neural network.
+This repository implements core machine learning and neural network components from scratch using only NumPy, with a focus on understanding both the mathematics and the engineering behind model training.
 
-This repository demonstrates the mathematical foundations of machine learning by implementing core algorithms from scratch using only NumPy. Each notebook builds upon the previous one, progressively introducing more advanced concepts and refining the implementation toward more reusable and structured code.
+Each notebook builds on the previous one, covering forward and backward propagation, optimization, regularization, and evaluation. The goal is to bridge the gap between theory and practical implementation without relying on high-level ML frameworks.
 
 ---
 
-## Contents
+## Key Concepts Covered
+
+* Forward and backward propagation
+* Gradient descent and backpropagation
+* Loss functions and their derivatives
+* Model evaluation and validation
+* Cross-validation
+* Regularization techniques such as L2 and Dropout
+* Evaluation metrics such as Accuracy, Precision, Recall, and F1
+* Threshold tuning for binary classification
+
+All models are implemented from scratch, without using machine learning frameworks such as PyTorch or TensorFlow.
+
+---
+
+## Notebook progression
+
+Each notebook builds on the previous one.
 
 ### 01 — Linear Regression & Backpropagation
 
@@ -40,30 +57,16 @@ This repository demonstrates the mathematical foundations of machine learning by
 * Overfitting demonstration
 * Comparison of regularization strategies
 
----
+### 05 — Evaluation Metrics
 
-## Key Concepts Covered
-
-* Forward pass and backward pass
-* Chain rule in practice
-* Gradient flow through layers
-* Loss functions and their derivatives
-* Basic model training
-* Model evaluation and validation strategies
-* Cross-validation and variance estimation
-* Data leakage prevention
-* Overfitting and generalization
-* Regularization techniques
+* Why accuracy alone is often misleading in real-world business problems
+* Introduction to precision, recall, and F1 score
+* Threshold tuning for binary classification and metric trade-offs
 
 ---
 
-## Goals
+## Why this project exists
 
-As mentioned above, I created this project as part of my learning journey with the goal of satisfying my curiosity. My goals are:
+High-level frameworks make it easy to train models, but they also hide many of the details that matter when debugging, improving, and reasoning about learning systems.
 
-* Understand how machine learning models work internally
-* Build intuition for gradients and optimization
-* Bridge the gap between theory and implementation
-* Go deeper than what most tutorials and courses show and explain
-
-All models are implemented from scratch, without using machine learning frameworks such as PyTorch or TensorFlow.
+This project focuses on understanding how models actually work internally by implementing their components manually.

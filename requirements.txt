@@ -3,3 +3,5 @@ matplotlib
 jupyter
 ipykernel
 pandas
+seaborn
+scikit-learn # used for train_test_split

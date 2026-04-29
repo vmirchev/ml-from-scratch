@@ -1,0 +1,3 @@
+inference:
+  inference_data_path: api/artifacts/inference_data.csv
+  max_batch_items: 64

@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ml-from-scratch"
+version = "0.1.0"
+description = "Neural network building blocks and training scripts implemented from scratch."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "fastapi",
+  "numpy",
+  "pandas",
+  "scikit-learn",
+  "PyYAML",
+  "uvicorn",
+]
+
+[project.optional-dependencies]
+dev = [
+  "ipykernel",
+  "jupyter",
+  "matplotlib",
+  "seaborn",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

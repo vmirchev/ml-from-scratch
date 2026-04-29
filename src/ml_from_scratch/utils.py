@@ -1,6 +1,16 @@
 import random
-import matplotlib.pyplot as plt
 import numpy as np
+import json
+from pathlib import Path
+
+from .activations import sigmoid
+from .metrics import (
+    accuracy_score,
+    binary_predictions_from_probs,
+    f1_score,
+    precision_score,
+    recall_score,
+)
 
 def set_seeds(seed):
   random.seed(seed)
@@ -35,6 +45,8 @@ def k_fold_split(X, y, k=5, shuffle=True):
     current = stop  
 
 def plot_training_curves(train_losses, train_accuracies, val_losses=None, val_accuracies=None):
+  import matplotlib.pyplot as plt
+
   fig, axes = plt.subplots(1, 2, figsize=(14, 6))
 
   # plot for Loss
@@ -86,3 +98,28 @@ def create_batches(X, y, batch_size=32, shuffle=True):
 
   for i in range(0, num_samples, batch_size):
     yield X[i:i + batch_size], y[i:i + batch_size]
+
+def evaluate_binary_model_with_metrics(model, X, y, loss_fn, threshold=0.5):
+  model.eval()
+
+  logits = model.forward(X)
+  loss = loss_fn.forward(logits, y)
+
+  y_pred = binary_predictions_from_probs(sigmoid(logits), threshold=threshold)
+  y_true = np.asarray(y).reshape(-1)
+
+  return {
+      "loss": loss,
+      "accuracy": accuracy_score(y_true, y_pred),
+      "precision": precision_score(y_true, y_pred),
+      "recall": recall_score(y_true, y_pred),
+      "f1": f1_score(y_true, y_pred),
+  }
+
+def save_json(path: Path, payload):
+  with open(path, "w") as f:
+    json.dump(payload, f, indent=2)
+
+def load_json(path: Path):
+    with open(path, "r") as f:
+        return json.load(f)

@@ -1,7 +1,10 @@
+fastapi
 numpy
-matplotlib
+pandas
+PyYAML
+scikit-learn # used for train_test_split
+uvicorn
 jupyter
 ipykernel
-pandas
+matplotlib
 seaborn
-scikit-learn # used for train_test_split
